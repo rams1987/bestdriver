@@ -1,6 +1,7 @@
 import xgboost as xg  # Calculate Gradient faster
 import pandas as pd  # Data processing - Easy Input/Ouput
 import matplotlib.pyplot as plt  # plotting library
+import numpy as np
 
 
 
@@ -19,6 +20,10 @@ def check_data(train_data, test_data):
 def data_cleanup(train_data, test_data):
     train_data.drop('id',axis=1,inplace=True)
     test_data.drop('id', axis=1, inplace=True)
+
+    train_data.replace(-1, np.NaN)
+    test_data.replace(-1, np.NaN)
+
     return train_data, test_data
 
 if __name__ == "__main__":
