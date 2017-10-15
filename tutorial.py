@@ -5,9 +5,11 @@ import numpy as np
 
 
 
+
+
 def check_data(train_data, test_data):
-    print('train {}'.format(train_data.shape), 'test {}'.format(test_data.shape))  # shape of the data
-    print('header {}'.format(train_data.head()))  # header of the data
+    #print('train {}'.format(train_data.shape), 'test {}'.format(test_data.shape))  # shape of the data
+    #print('header {}'.format(train_data.head()))  # header of the data
 
     # check if the data is repeated
     train_id = train_data['id']
@@ -33,3 +35,4 @@ if __name__ == "__main__":
     print('check completed')
     train_data, test_data = data_cleanup(train_data,test_data)
     print('cleanup completed')
+    print(train_data.head())
